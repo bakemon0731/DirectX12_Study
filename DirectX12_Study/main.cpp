@@ -55,4 +55,14 @@ public:
 			//次の「ファクトリ生成」の処理でもデバッグ機能を有効にするため、目印を立てる
 			dxgiFlags |= DXGI_CREATE_FACTORY_DEBUG;
 		}
+
+#endif
+		// ファクトリとデバイス
+
+		//グラフィックスの管理・生成を行う「ファクトリ」のポインタを用意
+		ComPtr<IDXGIFactory4> factory;
+		//ファクトリを実際に生成。（デバックのフラグも渡す）
+		ThrowIfFailed(CreateDXGIFactory2(dxgiFlags, IID_PPV_ARGS(&factory)));
+		//デバイスを生成。GPUを操作操作するため。
+		ThrowIfFailed(D3D12CreateDevice(nullptr, D3D_FEATURE_LEVEL_11_0,IID_PPV_ARGS(&m_device)));
 };
