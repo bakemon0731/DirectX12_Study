@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/ソリューション項目/" />
   <Project Path="DirectX12_Study/DirectX12_Study.vcxproj" Id="00d1cfbe-7390-42bf-a4bd-4d7e8ab4875c" />
 </Solution>
